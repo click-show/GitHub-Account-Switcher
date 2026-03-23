@@ -1,5 +1,7 @@
 # Ignore everything
 *
 
-# But track .vsix files
+# But track these files
+!.gitignore
+!README.md
 !*.vsix
