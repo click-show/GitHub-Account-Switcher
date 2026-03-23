@@ -1,0 +1,116 @@
+{
+  "name": "ghas",
+  "displayName": "GHAS",
+  "description": "GitHub Account Switcher",
+  "version": "1.0.6",
+  "icon": "icon.png",
+  "publisher": "Clickshow",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/local/ghas"
+  },
+   "engines": {
+    "vscode": "^1.110.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onView:ghas.accountManager",
+    "onCommand:ghas.openManager",
+    "onCommand:ghas.addAccount",
+    "onCommand:ghas.switchAccount",
+    "onCommand:ghas.refreshAccount",
+    "onCommand:ghas.deleteAccount",
+    "onCommand:ghas.cloneWithAccount"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ghas.openManager",
+        "title": "GHAS: Open GitHub Account Switcher",
+        "category": "GHAS"
+      },
+      {
+        "command": "ghas.addAccount",
+        "title": "GHAS: Add GitHub Account",
+        "category": "GHAS"
+      },
+      {
+        "command": "ghas.switchAccount",
+        "title": "GHAS: Switch GitHub Account",
+        "category": "GHAS"
+      },
+      {
+        "command": "ghas.refreshAccount",
+        "title": "GHAS: Refresh GitHub Account",
+        "category": "GHAS"
+      },
+      {
+        "command": "ghas.deleteAccount",
+        "title": "GHAS: Delete GitHub Account",
+        "category": "GHAS"
+      },
+      {
+        "command": "ghas.cloneWithAccount",
+        "title": "GHAS: Clone Repository with Account",
+        "category": "GHAS"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ghas",
+          "title": "GHAS",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    "views": {
+      "ghas": [
+        {
+          "id": "ghas.accountManager",
+          "name": "GitHub Account Switcher",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "GHAS",
+      "properties": {
+        "ghas.githubScopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "repo",
+            "read:org"
+          ],
+          "description": "OAuth scopes requested when authenticating GitHub accounts."
+        },
+        "ghas.ghasPath": {
+          "type": "string",
+          "default": "gh",
+          "description": "Path or command name for the GHAS-compatible CLI executable (for example: gh, ghas, or C:\\Tools\\ghas.exe)."
+        }
+      }
+    }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.110.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "undici-types": "^7.18.2"
+  }
+}

@@ -1,0 +1,11 @@
+**/*.ts
+!**/*.d.ts
+**/*.map
+**/*.test.js
+tests/
+docs/
+.vscode/
+tsconfig.json
+package-lock.json
+ghas-*.vsix
+github-account-switcher-*.vsix
