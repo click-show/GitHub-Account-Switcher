@@ -1,5 +1,7 @@
 # GHAS — GitHub Account Switcher
 
+[![GHAS logo](https://raw.githubusercontent.com/click-show/GitHub-Account-Switcher/main/icon.png)](https://github.com/click-show/GitHub-Account-Switcher)
+
 > **Written by Saqib Hussain**
 
 A VS Code extension that lets you save multiple GitHub accounts and switch the active authentication context in seconds — no more logging out and back in, no more broken `git clone` after a switch.
@@ -86,6 +88,10 @@ Token expiry is **not** artificially enforced. GitHub personal access tokens and
 ---
 
 ## Release Notes
+
+### 1.0.7
+- Fixed the sidebar **Remove** button so it uses the same VS Code delete confirmation flow as `GHAS: Delete GitHub Account`.
+- Removed the webview `window.confirm` dependency that could block UI deletion in some environments.
 
 ### 1.0.6
 - Launched
